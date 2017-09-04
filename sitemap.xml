@@ -13,6 +13,11 @@
   </url>
   
   <url>
+    <loc>https://mdommett.github.io/publications/excited-state-proton-transfer-in-2/-hydroxychalcone-derivatives/</loc>
+    <lastmod>2017-09-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mdommett.github.io/2017/09/04/here-we-go-again-rmd/</loc>
     <lastmod>2017-09-04T00:00:00+00:00</lastmod>
   </url>
@@ -56,6 +61,12 @@
   
   <url>
     <loc>https://mdommett.github.io/post/</loc>
+    <lastmod>2017-09-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mdommett.github.io/publications/</loc>
     <lastmod>2017-09-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
