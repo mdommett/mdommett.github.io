@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mdommett.github.io/about/</loc>
+    <lastmod>2017-09-04T21:48:51-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mdommett.github.io/2017/09/04/a-new-post/</loc>
     <lastmod>2017-09-04T00:00:00+00:00</lastmod>
   </url>
@@ -33,17 +38,13 @@
   </url>
   
   <url>
-    <loc>https://mdommett.github.io/about/</loc>
-  </url>
-  
-  <url>
     <loc>https://mdommett.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mdommett.github.io/</loc>
-    <lastmod>2017-09-04T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-04T21:48:51-07:00</lastmod>
     <priority>0</priority>
   </url>
   
