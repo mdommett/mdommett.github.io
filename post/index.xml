@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Michael Dommett</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 04 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mdommett.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Publishing my first scientific paper</title>
+      <link>https://mdommett.github.io/post/publishing-my-first-scientific-paper/</link>
+      <pubDate>Wed, 06 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mdommett.github.io/post/publishing-my-first-scientific-paper/</guid>
+      <description>At the end of 2016, Rachel Crespo-Otero and I received news that our submitted manuscript was to be published in the journal Physical Chemistry Chemical Physics. It was a great piece of news to receive before the Christmas holidays and was met with both joy and relief. It was the culmination of 12 months of work and underwent versions before we were happy enough to submit. From there, the review process was quite straightforward.</description>
+    </item>
     
     <item>
       <title>A new post</title>
@@ -18,24 +27,6 @@
       
       <guid>https://mdommett.github.io/post/a-new-post/</guid>
       <description>Here is the latest example of a shit post</description>
-    </item>
-    
-    <item>
-      <title>Here we go again</title>
-      <link>https://mdommett.github.io/post/here-we-go-again-rmd/</link>
-      <pubDate>Mon, 04 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://mdommett.github.io/post/here-we-go-again-rmd/</guid>
-      <description>Got the bloody bug</description>
-    </item>
-    
-    <item>
-      <title>Round the bend</title>
-      <link>https://mdommett.github.io/post/round-the-bend/</link>
-      <pubDate>Mon, 04 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://mdommett.github.io/post/round-the-bend/</guid>
-      <description>About a boy</description>
     </item>
     
   </channel>

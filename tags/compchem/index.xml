@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Compchem on Michael Dommett</title>
+    <link>https://mdommett.github.io/tags/compchem/</link>
+    <description>Recent content in Compchem on Michael Dommett</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 06 Sep 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mdommett.github.io/tags/compchem/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Publishing my first scientific paper</title>
+      <link>https://mdommett.github.io/post/publishing-my-first-scientific-paper/</link>
+      <pubDate>Wed, 06 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mdommett.github.io/post/publishing-my-first-scientific-paper/</guid>
+      <description>At the end of 2016, Rachel Crespo-Otero and I received news that our submitted manuscript was to be published in the journal Physical Chemistry Chemical Physics. It was a great piece of news to receive before the Christmas holidays and was met with both joy and relief. It was the culmination of 12 months of work and underwent versions before we were happy enough to submit. From there, the review process was quite straightforward.</description>
+    </item>
+    
+  </channel>
+</rss>

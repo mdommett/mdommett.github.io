@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mdommett.github.io/post/publishing-my-first-scientific-paper/</loc>
+    <lastmod>2017-09-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mdommett.github.io/publications/</loc>
     <lastmod>2017-09-05T09:48:51-07:00</lastmod>
   </url>
@@ -18,34 +23,31 @@
   </url>
   
   <url>
-    <loc>https://mdommett.github.io/post/here-we-go-again-rmd/</loc>
-    <lastmod>2017-09-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mdommett.github.io/post/round-the-bend/</loc>
-    <lastmod>2017-09-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mdommett.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://mdommett.github.io/tags/compchem/</loc>
+    <lastmod>2017-09-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://mdommett.github.io/</loc>
-    <lastmod>2017-09-05T09:48:51-07:00</lastmod>
+    <lastmod>2017-09-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mdommett.github.io/post/</loc>
-    <lastmod>2017-09-04T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mdommett.github.io/tags/</loc>
+    <lastmod>2017-09-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

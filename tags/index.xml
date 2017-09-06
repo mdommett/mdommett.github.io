@@ -6,9 +6,19 @@
     <description>Recent content in Tags on Michael Dommett</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
+    <lastBuildDate>Wed, 06 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mdommett.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Compchem</title>
+      <link>https://mdommett.github.io/tags/compchem/</link>
+      <pubDate>Wed, 06 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mdommett.github.io/tags/compchem/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
