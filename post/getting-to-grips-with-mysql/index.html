@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Michael Dommett">
+<meta name="description" content="Over the last few months I have been using MySQL to locally archive, store, and access data for a few of my projects. Previously, I was using Excel for this purpose, but I have come to find it less than ideal, mainly due to its clunkiness and the fact that I got into bad habits (no vesion control, poor formatting, rudimentary analyses). As such, I decided to switch to a combination of MySQL and python with pandas.">
+
+<meta property="og:title" content="Getting to grips with MySQL" />
+<meta property="og:description" content="Over the last few months I have been using MySQL to locally archive, store, and access data for a few of my projects. Previously, I was using Excel for this purpose, but I have come to find it less than ideal, mainly due to its clunkiness and the fact that I got into bad habits (no vesion control, poor formatting, rudimentary analyses). As such, I decided to switch to a combination of MySQL and python with pandas." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/getting-to-grips-with-mysql/" />
+
+
+
+<meta property="article:published_time" content="2017-12-05T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-12-05T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<title>
+
+
+     Getting to grips with MySQL 
+
+</title>
+<link rel="canonical" href="/post/getting-to-grips-with-mysql/">
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/pygments.css">
+    <link rel="stylesheet" href="/css/main.css">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="/img/favicon.ico"
+
+>
+
+
+
+
+</head>
+
+
+<body lang="">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+    
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                
+                <a href="/"><img class="avatar" height="50" width="50" src="/img/michael.jpg", srcset="/img/michael.jpg 1x"></a>
+            
+            <a href="/"><div class="name">Michael Dommett</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-about"><a href="/about/"><span>About</span></a></li>
+                    
+                        <li class="nav-post"><a href="/post/"><span>Thoughts</span></a></li>
+                    
+                        <li class="nav-publications"><a href="/publications/"><span>Publications</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="//github.com/mdommett" target="_blank" rel="noopener"><img class="icon" src="/img/github.svg" alt="github" /></a>
+        
+
+        
+            <a href="https://twitter.com/dommett110" target="_blank" rel="noopener"><img class="icon" src="/img/twitter.svg" alt="twitter" /></a>
+        
+
+        
+
+        
+            <a href="https://www.linkedin.com/in/michael-dommett-aa135641/" target="_blank" rel="noopener"><img class="icon" src="/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="mailto:michaeldommett1@gmail.com"><img class="icon" src="/img/email.svg" alt="email" /></a>
+        
+
+        
+            <a href="/index.xml"><img class="icon" src="/img/rss.svg" alt="rss" /></a>
+        
+        
+        </div>
+    </div>
+</section>
+
+<section class="main">
+    <div class="container">
+        <div class="content">
+            <div class="page-heading">
+
+    Getting to grips with MySQL
+
+</div>
+
+            <div class="markdown">
+                <p>Over the last few months I have been using MySQL to locally archive, store, and access data for a few of my projects. Previously, I was using Excel for this purpose, but I have come to find it less than ideal, mainly due to its clunkiness and the fact that I got into bad habits (no vesion control, poor formatting, rudimentary analyses). As such, I decided to switch to a combination of MySQL and python with pandas.</p>
+
+<p>The data I am analysing come from a variety of test files outputs, namely electronic structure codes <a href="gaussian.com">Gaussian</a>, <a href="http://www.turbomole.com/">Turbomole</a>, and <a href="http://www.molcas.org/">Molcas</a>. I am interested in studying the relaxation mechanisms in molecular rotors, in particular for studying non-radiative decay via intersystem-crossings. However, the exact application is not the focus here, more the process in data extraction and analysis.</p>
+
+<p>First I needed to design my database; I used a column for each spin state and geometry, and level of theory, resulting in 21 columns. Each feature would be a molecular system at a given level of theory.</p>
+
+<p>All of the data can be found herey(LINK). I wrote a python script <code>fill_db.py</code>, which mined each output file and filled in each table. Important here was a naming convention for the output files (24 in total). Each function in <code>fill_db.py</code> is specifically for a type of output file and type of data to be extracted. As such, is is quite specific for the current task has limited flexibility. However, its still useful as a proof of concept.</p>
+
+<p>Once the database is filled, I use Jupyter and pandas to analyse the data. An exemplar notebook can be found in the repository(LINK). Here I can compare different methods, plotting and analysing using pandas, numpy and matplotlib. Here I am mostly interested in comparing different features (methods), which the database allows well. Once converted to a dataframe in pandas, I can then append new data directly to the dataframe in the notebook, before adding directly to the SQL database.</p>
+
+<p>md</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+</body>
+</html>
+
