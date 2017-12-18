@@ -6,20 +6,10 @@
     <description>Recent content on Michael Dommett</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 07 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Molecular orbital theory</title>
-      <link>/post/molecular-orbital-theory/</link>
-      <pubDate>Thu, 07 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/molecular-orbital-theory/</guid>
-      <description>Last week I held a tutorial for undergraduate chemistry students about molecular orbital theory. I really enjoyed going over the fundamental principles on quantum chemistry, and as such wanted to write a short post on the basics.
-Molecular orbital theory is a somewhat crude approximation to allow us to calculate the energy of an electron in an orbital, forming the basis for calculating the energy of a molecule using, for example, the self-consistent field procedure.</description>
-    </item>
     
     <item>
       <title>Getting to grips with MySQL</title>
