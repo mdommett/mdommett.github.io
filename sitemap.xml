@@ -3,12 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/getting-to-grips-with-mysql/</loc>
+    <loc>/thoughts/titanic-machine-learning-from-disaster/</loc>
+    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/thoughts/getting-to-grips-with-mysql/</loc>
     <lastmod>2017-12-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/publishing-my-first-scientific-paper/</loc>
+    <loc>/thoughts/publishing-my-first-scientific-paper/</loc>
     <lastmod>2017-09-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -35,19 +40,19 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2017-12-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2017-12-05T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
     <lastmod>2017-09-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/thoughts/</loc>
+    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
