@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Titanic: machine learning from disaster</title>
+      <title>titanic: machine learning from disaster</title>
       <link>/thoughts/titanic-machine-learning-from-disaster/</link>
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
       
@@ -22,7 +22,16 @@ The competition I took part in, whilst filled to the brim with turkey, mince pie
     </item>
     
     <item>
-      <title>Getting to grips with MySQL</title>
+      <title>thoughts</title>
+      <link>/thoughts/</link>
+      <pubDate>Thu, 04 Jan 2018 21:48:51 -0700</pubDate>
+      
+      <guid>/thoughts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>getting to grips with MySQL</title>
       <link>/thoughts/getting-to-grips-with-mysql/</link>
       <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
       
@@ -31,7 +40,7 @@ The competition I took part in, whilst filled to the brim with turkey, mince pie
     </item>
     
     <item>
-      <title>Publishing my first scientific paper</title>
+      <title>publishing my first scientific paper</title>
       <link>/thoughts/publishing-my-first-scientific-paper/</link>
       <pubDate>Wed, 06 Sep 2017 00:00:00 +0000</pubDate>
       
@@ -40,7 +49,7 @@ The competition I took part in, whilst filled to the brim with turkey, mince pie
     </item>
     
     <item>
-      <title>Publications</title>
+      <title>publications</title>
       <link>/publications/</link>
       <pubDate>Tue, 05 Sep 2017 09:48:51 -0700</pubDate>
       
@@ -50,7 +59,7 @@ Excited State Intramolecular Proton Transfer in 2&amp;rsquo;-Hydroxychalcone Der
     </item>
     
     <item>
-      <title>About</title>
+      <title>about</title>
       <link>/about/</link>
       <pubDate>Mon, 04 Sep 2017 21:48:51 -0700</pubDate>
       
