@@ -176,7 +176,7 @@ section.header .content {
 section.header .avatar {
   border-radius: 50%;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
-  max-width: 50px;
+  max-width: 4000px;
 }
 section.header .name {
   font-size: 18px;
@@ -204,7 +204,7 @@ section.header h3.self-intro {
   margin-bottom: 1rem;
 }
 section.header nav {
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 16px;
   text-transform: none;
   font-family: 'Raleway', 'Helvetica Neue', 'Arial', sans-serif;
@@ -259,7 +259,7 @@ section.header nav ul a:hover {
     color: #333;
   }
   section.header nav {
-    font-size: 14px;
+    font-size: 18px;
     margin-bottom: 0;
   }
   section.header nav ul {
@@ -307,8 +307,8 @@ section.icons .content a:hover {
   opacity: 0.8;
 }
 section.icons .content a .icon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 }
 section.icons .content a .flag {
   border-radius: 50%;
@@ -385,7 +385,7 @@ section.main .content .page-heading {
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
   color: #333;
-  text-transform: lowercase;
+  text-transform: none;
   margin-bottom: 16px;
 }
 section.main .content .front-matter .page-heading {
@@ -693,7 +693,7 @@ section.main .content .markdown abbr {
   font-size: 0.85rem;
   font-weight: bold;
   color: #666666;
-  text-transform: uppercase;
+  text-transform: none;
 }
 section.main .content .markdown abbr[title] {
   cursor: help;
