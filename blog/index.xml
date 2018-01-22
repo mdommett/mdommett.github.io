@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>michael dommett</title>
-    <link>/</link>
-    <description>Recent content on michael dommett</description>
+    <title>Blogs on michael dommett</title>
+    <link>/blog/</link>
+    <description>Recent content in Blogs on michael dommett</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 08 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -37,26 +37,6 @@ The competition I took part in, whilst filled to the brim with turkey, mince pie
       
       <guid>/blog/i-got-published/</guid>
       <description>At the end of 2016, Rachel Crespo-Otero and I received news that our submitted manuscript was to be published in the journal Physical Chemistry Chemical Physics. It was a great piece of news to receive before the Christmas holidays and was met with both joy and relief. It was the culmination of 12 months of work - the manuscript had taken many guises before we were happy enough to submit. This was my first scientific publication and in this post I want to give some background into the project, how we approached the problem, and the process of publishing in a peer-reviewed academic journal.</description>
-    </item>
-    
-    <item>
-      <title>Publications</title>
-      <link>/publications/</link>
-      <pubDate>Tue, 05 Sep 2017 09:48:51 -0700</pubDate>
-      
-      <guid>/publications/</guid>
-      <description>How Inter- and Intramolecular Processes Dictate Aggregation-Induced Emission in Crystals Undergoing Excited-State Proton Transfer
-Dommett, Rivera, Crespo-Otero, J. Phys. Chem. Lett. 2017, 8, 6148−6153 [PDF] [Web]
-Excited state proton transfer in 2′-hydroxychalcone derivatives Dommett, Crespo-Otero, Phys. Chem. Chem. Phys., 2017, 19, 2409-2416 [PDF] [Web]</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Mon, 04 Sep 2017 21:48:51 -0700</pubDate>
-      
-      <guid>/about/</guid>
-      <description>I model how light and atoms interact, and how we can use this to our advantage in technology.</description>
     </item>
     
   </channel>
