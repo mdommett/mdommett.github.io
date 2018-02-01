@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Compchem on michael dommett</title>
-    <link>https://mdommett.github.io/tags/compchem/</link>
+    <link>/tags/compchem/</link>
     <description>Recent content in Compchem on michael dommett</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Wed, 06 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://mdommett.github.io/tags/compchem/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/compchem/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>I got  published</title>
-      <link>https://mdommett.github.io/blog/i-got-published/</link>
+      <link>/blog/i-got-published/</link>
       <pubDate>Wed, 06 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mdommett.github.io/blog/i-got-published/</guid>
+      <guid>/blog/i-got-published/</guid>
       <description>At the end of 2016, Rachel Crespo-Otero and I received news that our submitted manuscript was to be published in the journal Physical Chemistry Chemical Physics. It was a great piece of news to receive before the Christmas holidays and was met with both joy and relief. It was the culmination of 12 months of work - the manuscript had taken many guises before we were happy enough to submit. This was my first scientific publication and in this post I want to give some background into the project, how we approached the problem, and the process of publishing in a peer-reviewed academic journal.</description>
     </item>
     

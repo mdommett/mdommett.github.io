@@ -9,16 +9,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Michael Dommett">
-<meta name="description" content="Compchem and the like">
+<meta name="description" content="In theoretical photochemistry, we simulate what happens when molecules and materials absorb light. In order to excite electrons in organic materials, a requirement for photovoltaic devices, the light has to be in the ultraviolet range of the electromagnetic spectrum. To characterise molecules, a UV/Vis spectrometer measures how absorption varies with the energy of the incident light. We can simulate this process using calculations, and plot a spectrum, without ever going into the lab.">
 
-<meta property="og:title" content="Blogs" />
-<meta property="og:description" content="Compchem and the like" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/blog/" />
+<meta property="og:title" content="Plotting a spectrum with python" />
+<meta property="og:description" content="In theoretical photochemistry, we simulate what happens when molecules and materials absorb light. In order to excite electrons in organic materials, a requirement for photovoltaic devices, the light has to be in the ultraviolet range of the electromagnetic spectrum. To characterise molecules, a UV/Vis spectrometer measures how absorption varies with the energy of the incident light. We can simulate this process using calculations, and plot a spectrum, without ever going into the lab." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/plotting-a-spectrum-with-python/" />
 
 
 
-<meta property="og:updated_time" content="2018-01-29T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2018-01-29T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-01-29T00:00:00&#43;00:00"/>
+
 
 
 
@@ -33,10 +35,10 @@
 <title>
 
 
-     Blogs 
+     Plotting a spectrum with python 
 
 </title>
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/post/plotting-a-spectrum-with-python/">
 
 
 
@@ -67,8 +69,6 @@
 
 
 
-  <link href="/blog/index.xml" rel="alternate" type="application/rss+xml" title="michael dommett" />
-
 
 </head>
 
@@ -84,18 +84,6 @@
                 
                 
                 
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
                 
                     
                 
@@ -158,52 +146,32 @@
         </div>
     </div>
 </section>
-<script src="ASCIIMathML.js"></script>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML"></script>
-<script>renderMathInElement(document.body);</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    });
+    </script>
+    <script type="text/javascript"
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
 <section class="main">
     <div class="container">
         <div class="content">
-            
-            <div class="page-heading">Blog</div>
-            <ul>
-                
-                
-                    
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2018-01-29T00:00:00Z'>Jan 29, 2018</time></span>
-    
-    <a href="/blog/plotting-a-spectrum-with-python/"><span>Plotting a spectrum with python</span></a>
-</li>
+            <div class="page-heading">
 
-                    
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2018-01-08T00:00:00Z'>Jan 8, 2018</time></span>
-    
-    <a href="/blog/titanic-machine-learning-from-disaster/"><span>Titanic: machine learning from disaster</span></a>
-</li>
+    Plotting a spectrum with python
 
-                    
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2017-12-05T00:00:00Z'>Dec 5, 2017</time></span>
-    
-    <a href="/blog/getting-to-grips-with-mysql/"><span>Getting to grips with MySQL</span></a>
-</li>
+</div>
 
-                    
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2017-09-06T00:00:00Z'>Sep 6, 2017</time></span>
-    
-    <a href="/blog/i-got-published/"><span>I got  published</span></a>
-</li>
+            <div class="markdown">
+                <p>In theoretical photochemistry, we simulate what happens when molecules and materials absorb light. In order to excite electrons in organic materials, a requirement for photovoltaic devices, the light has to be in the ultraviolet range of the electromagnetic spectrum. To characterise molecules, a UV/Vis spectrometer measures how absorption varies with the energy of the incident light. We can simulate this process using calculations, and plot a spectrum, without ever going into the lab. This post shows how to plot one of these spectra from the output of an electronic structure calculation.</p>
 
-                    
-                
-            </ul>
+<p>What we start with are a list of electronic excitation energies, and their oscillator strengths. The</p>
+
+            </div>
         </div>
     </div>
 </section>
@@ -213,12 +181,7 @@
 
 
 
-<script src="//yihui.name/js/math-code.js"></script>
-<script async
-src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
 
 </body>
 </html>
-
 
