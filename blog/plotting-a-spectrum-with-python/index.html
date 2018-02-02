@@ -214,31 +214,31 @@ plt.tight_layout()
 
 <p>Thats all well and good, but does not represent what really happens in a spectrometer, since there are huge numbers of molecular conformations, which all will all have slightly different oscillator strengths. Therefore, we have a <em>distribution</em> about our vertical line. We can crudely approximate this distribution to be gaussian and interpolate between the energies to generate a peaks. To achieve this we need to code up the gaussian distribution. We run across an array of <em>M</em> energies and use as our reference each of our N excitation energies <em>E</em>, which sit at the centre of the distribution. The scaling factor is the associated oscillator strength <em>f</em>. Our resulting spectrum will thus take the form:</p>
 
-<div>$$f(E)=\sum_{i}^{M}\sum_{j}^{N}f_j\exp\left[-\frac{(E_j-E_i)^2}{\sigma}\right]$$</div>
+<div>$$g(E)=\sum_{i}^{M}\sum_{j}^{N}f_j\exp\left[-\frac{(E_j-E_i)^2}{\sigma}\right]$$</div>
 
 <p>We can define a function that computes the above equation as:</p>
 
 <pre><code class="language-python">def spectrum(E,osc,sigma,x):
-    fE=[]
+    gE=[]
     for Ei in x:
         tot=0
         for Ej,os in zip(E,osc):
             tot+=os*np.exp(-((((Ej-Ei)/sigma)**2)))
-        fE.append(tot)
-    return fE
+        gE.append(tot)
+    return gE
 </code></pre>
 
 <p>We can call this function using our fictitious energies and oscillator strengths, choosing sigma as 0.4 eV and x to run over 500 points within an 6 eV window:</p>
 
 <pre><code class="language-python">x=np.linspace(0,6, num=500, endpoint=True)
 simga=0.4
-fE=spectrum(energies,osc,sigma,x)
+gE=spectrum(energies,osc,sigma,x)
 </code></pre>
 
 <p>We can then plot x against fE to have a nice broadened spectrum:</p>
 
 <pre><code class="language-python">fig,ax=plt.subplots(figsize=(6,4))
-ax.plot(x,fE,&quot;--k&quot;)
+ax.plot(x,gE,&quot;--k&quot;)
 for energy,osc_strength in zip(energies,osc):
     ax.plot((energy,energy),(0,osc_strength),c=&quot;r&quot;)
 ax.set_xlabel(&quot;Energy (eV)&quot;,fontsize=16)
