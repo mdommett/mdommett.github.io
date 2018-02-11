@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Michael Dommett">
+<meta name="description" content="K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class based on the K (an intenger) closest data points. For the simplest example, lets take a one dimensional problem. Say we have a group of people, and the only info we have is their height and gender. Our X-variable is height, and we have to classify as male or female. We then add a new person to the group, with only their height as information, and want to classify their gender.">
+
+<meta property="og:title" content="K-nearest neighbours in 3 functions" />
+<meta property="og:description" content="K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class based on the K (an intenger) closest data points. For the simplest example, lets take a one dimensional problem. Say we have a group of people, and the only info we have is their height and gender. Our X-variable is height, and we have to classify as male or female. We then add a new person to the group, with only their height as information, and want to classify their gender." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/k-nearest-neighbours-in-3-functions/" />
+
+
+
+<meta property="article:published_time" content="2018-02-11T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-02-11T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<title>
+
+
+     K-nearest neighbours in 3 functions 
+
+</title>
+<link rel="canonical" href="/blog/k-nearest-neighbours-in-3-functions/">
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/pygments.css">
+    <link rel="stylesheet" href="/css/main.css">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="/img/favicon.ico"
+
+>
+
+
+
+
+</head>
+
+
+<body lang="">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+    
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="/"><img class="avatar" height="100" width="100" src="/img/michael.jpg", srcset="/img/michael.jpg 1x"></a>
+            
+            <a href="/"><div class="name">Michael Dommett</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-About"><a href="/about/"><span>About</span></a></li>
+                    
+                        <li class="nav-Blog"><a href="/blog/"><span>Blog</span></a></li>
+                    
+                        <li class="nav-Publications"><a href="/publications/"><span>Publications</span></a></li>
+                    
+                        <li class="nav-"><a href="/documents/michaeldommettcv.pdf"><span>CV</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="//github.com/mdommett" target="_blank" rel="noopener"><img class="icon" src="/img/github.svg" alt="github" /></a>
+        
+
+        
+            <a href="https://twitter.com/dommett110" target="_blank" rel="noopener"><img class="icon" src="/img/twitter.svg" alt="twitter" /></a>
+        
+
+        
+
+        
+            <a href="https://www.linkedin.com/in/mdommett/" target="_blank" rel="noopener"><img class="icon" src="/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="mailto:michaeldommett1@gmail.com"><img class="icon" src="/img/email.svg" alt="email" /></a>
+        
+
+        
+            <a href="/index.xml"><img class="icon" src="/img/rss.svg" alt="rss" /></a>
+        
+        
+        </div>
+    </div>
+</section>
+<script src="ASCIIMathML.js"></script>
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML"></script>
+<script>renderMathInElement(document.body);</script>
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/xcode.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    K-nearest neighbours in 3 functions
+
+</div>
+
+                    <div class="initials"><a href="/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Sun Feb 11 2018 00:00:00 UTC'>Feb 11, 2018</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>4 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                
+
+<p>K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class based on the <em>K</em> (an intenger) closest data points. For the simplest example, lets take a one dimensional problem. Say we have a group of people, and the only info we have is their height and gender. Our X-variable is height, and we have to classify as male or female. We then add a new person to the group, with only their height as information, and want to classify their gender. We take the <em>K</em> (say, three) most similar heights and assign the person&rsquo;s gender based on which of male or female is most common. Simple!</p>
+
+<p>K-nearest neighbours is what is called a <em>lazy</em> algorithm, since the classification is done on the fly for each case, using the whole data set. So, lets look at implementing KNN in python. We will need  three functions:</p>
+
+<ol>
+<li>Measure the distances between the instance to be classified and all other data points</li>
+<li>Find the K nearest neighbours (closest data points to the instance to be classified)</li>
+<li>Vote on the classification based on the neighbours</li>
+</ol>
+
+<p>Lets go through these one by one, using the classic <em>Iris</em> dataset. The Iris data set uses four variables (sepal width, sepal length, petal length, petal width) and assigns one of three types of Iris flower. We will use 80% of this data set for training, and test it using the other 20%. Since this is a lazy algorithm, for each vale of the test set we need to compute against the other 80% (the known values) each time.</p>
+
+<h3 id="1-calculate-the-distance">1. Calculate the distance</h3>
+
+<p>We need to compute the simalirity between two points. As a measure of similarity, we will be using a the Euclidean distance. With our height and gender example, we were working in 1D vector space. In the Iris set, we are working in 4-dimensional space (sepal width, sepal length, petal length, petal width). To calculate the distance between to datapoints, we can use this general function:</p>
+
+<pre><code class="language-python">def euclidean_distance(point1,point2):
+    dist2=[(b - a)**2 for (a, b) in zip(point1,point2)]
+    dist=np.sqrt(sum(dist2))
+    return dist
+</code></pre>
+
+<p>This works for any dimensional space, whether we have 1,2,4 or 40 variables.</p>
+
+<h3 id="2-find-the-nearest-neighbours">2. Find the nearest neighbours</h3>
+
+<p>Once we have our distances, we choose the K smallest values to use as our classifiers. These are our neighbours. We use our <code>euclidean_distance</code> function within our neighbours function. We calculate our distances between all points in the dataset and our point to classify. As a note, our points are 5-dimensional, where the 5th is the class, so we remove this from our distance calculation</p>
+
+<pre><code class="language-python">import operator
+def get_neighbours(dataset,point,k):
+    distances = []
+    for i in range(len(dataset)):
+        dist=euclidean_distance(point,dataset[i][:-1]) # Remove the class from the distance calc.
+        distances.append((dataset[i], dist)) # Tupple of the data point and the corresponding distance
+    distances.sort(key=operator.itemgetter(1)) # Sort the distances from smallest to largest
+    neighbours = []
+    for x in range(k):
+        neighbours.append(distances[x][0]) # get the vector of the K nearest neighbours
+    return neighbours
+</code></pre>
+
+<p>This is the main body of the algorithm. We pass the whole data set and loop over it, assigning the neighbours for our point in question. Next, we need to vote on which class to assign our point.</p>
+
+<h3 id="3-vote-on-the-class">3. Vote on the class</h3>
+
+<p>We need to take our nieghbours and have them vote on which class we assign to our data point. We do this simply by finding the majority:</p>
+
+<pre><code class="language-python">def get_response(neighbours):
+    classVotes = {} # initiate a dictionary
+    # For each of the classes, keep a running total with the number of times that class occurs
+    for x in range(len(neighbours)):
+        response = neighbours[x][-1] # The class of the neighbours is the last value of the vector
+        if response in classVotes: 
+            classVotes[response] += 1 # add 1 to the running total for that class
+        else:
+            classVotes[response] = 1 # create a new dictionary value for a new class that hasn't appeared
+    sortedVotes = sorted(classVotes.items(), key=operator.itemgetter(1), reverse=True) # sort based on highest number of votes
+    return sortedVotes[0][0] # return the class with the most votes
+</code></pre>
+
+<p>By passing our neighbours to the <code>get_response</code>, the class will be returned to us. Lets put all this together now.</p>
+
+<h3 id="main-algorithm">Main algorithm</h3>
+
+<pre><code class="language-python">import pandas as pd
+import numpy as np
+from sklearn.cross_validation import train_test_split
+
+df=pd.read_csv(&quot;iris.data&quot;,names=[&quot;sepal length&quot;, &quot;sepal width&quot;, &quot;petal length&quot;,&quot;petal width&quot;,&quot;class&quot;],index_col=False)
+
+df.loc[df['class']==&quot;Iris-virginica&quot;,&quot;class&quot;]=0
+df.loc[df['class']==&quot;Iris-setosa&quot;,&quot;class&quot;]=1
+df.loc[df['class']==&quot;Iris-versicolor&quot;,&quot;class&quot;]=2
+
+
+X_train, X_test, y_train, y_test = train_test_split(np.array(df), np.array(df.loc[:,'class']), test_size=0.2, random_state=1)
+
+predictions=[]
+k = 3
+for x in range(X_test.shape[0]):
+    point=[X_test[x][0],X_test[x][1],X_test[x][2]]
+    neighbours=get_neighbours(X_train,point,k)
+    result=get_response(neighbours)
+    predictions.append(result)
+</code></pre>
+
+<p>And thats it! We have our set of predictions. We can test the accuracy of these based on a fourth function (sorry, I lied when I said 3 functions..!):</p>
+
+<pre><code class="language-python">def accuracy(actual, prediction):
+    incorrect=(np.array(prediction)-np.array(actual))**2
+    total=0
+    for i in incorrect:
+        if i!=0:
+            total+=1
+    return ((len(actual)-total)/len(actual))*100
+
+print(accuracy(predictions))
+&gt;&gt;&gt;96.6667
+</code></pre>
+
+<p>There we go, the 3-Nearest neighbours is able to predict at 97% accuracy. Not bad considering how simple this algorithm is. Thanks for reading!</p>
+
+<p>md</p>
+
+                <br>
+		<p><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+</body>
+</html>
+

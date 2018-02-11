@@ -6,17 +6,26 @@
     <description>Recent content in Blogs on michael dommett</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 29 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Plotting a spectrum with python</title>
-      <link>/blog/plotting-a-spectrum-with-python/</link>
+      <title>K-nearest neighbours in 3 functions</title>
+      <link>/blog/k-nearest-neighbours-in-3-functions/</link>
+      <pubDate>Sun, 11 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/k-nearest-neighbours-in-3-functions/</guid>
+      <description>K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class based on the K (an intenger) closest data points. For the simplest example, lets take a one dimensional problem. Say we have a group of people, and the only info we have is their height and gender. Our X-variable is height, and we have to classify as male or female. We then add a new person to the group, with only their height as information, and want to classify their gender.</description>
+    </item>
+    
+    <item>
+      <title>Interpolation with Gaussian broadening</title>
+      <link>/blog/interpolation-with-gaussian-broadening/</link>
       <pubDate>Mon, 29 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/plotting-a-spectrum-with-python/</guid>
+      <guid>/blog/interpolation-with-gaussian-broadening/</guid>
       <description>In theoretical photochemistry, we simulate what happens when molecules and materials absorb light. In order to excite electrons in organic materials, a requirement for photovoltaic devices, the light has to be in the ultraviolet range of the electromagnetic spectrum. To characterise molecules, a UV/Vis spectrometer measures how absorption varies with the energy of the incident light. We can simulate this process using calculations, and plot a spectrum, without ever going into the lab.</description>
     </item>
     

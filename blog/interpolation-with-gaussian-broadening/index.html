@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Michael Dommett">
+<meta name="description" content="In theoretical photochemistry, we simulate what happens when molecules and materials absorb light. In order to excite electrons in organic materials, a requirement for photovoltaic devices, the light has to be in the ultraviolet range of the electromagnetic spectrum. To characterise molecules, a UV/Vis spectrometer measures how absorption varies with the energy of the incident light. We can simulate this process using calculations, and plot a spectrum, without ever going into the lab.">
+
+<meta property="og:title" content="Interpolation with Gaussian broadening" />
+<meta property="og:description" content="In theoretical photochemistry, we simulate what happens when molecules and materials absorb light. In order to excite electrons in organic materials, a requirement for photovoltaic devices, the light has to be in the ultraviolet range of the electromagnetic spectrum. To characterise molecules, a UV/Vis spectrometer measures how absorption varies with the energy of the incident light. We can simulate this process using calculations, and plot a spectrum, without ever going into the lab." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/interpolation-with-gaussian-broadening/" />
+
+
+
+<meta property="article:published_time" content="2018-01-29T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-01-29T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<title>
+
+
+     Interpolation with Gaussian broadening 
+
+</title>
+<link rel="canonical" href="/blog/interpolation-with-gaussian-broadening/">
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/pygments.css">
+    <link rel="stylesheet" href="/css/main.css">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="/img/favicon.ico"
+
+>
+
+
+
+
+</head>
+
+
+<body lang="">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+    
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="/"><img class="avatar" height="100" width="100" src="/img/michael.jpg", srcset="/img/michael.jpg 1x"></a>
+            
+            <a href="/"><div class="name">Michael Dommett</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-About"><a href="/about/"><span>About</span></a></li>
+                    
+                        <li class="nav-Blog"><a href="/blog/"><span>Blog</span></a></li>
+                    
+                        <li class="nav-Publications"><a href="/publications/"><span>Publications</span></a></li>
+                    
+                        <li class="nav-"><a href="/documents/michaeldommettcv.pdf"><span>CV</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="//github.com/mdommett" target="_blank" rel="noopener"><img class="icon" src="/img/github.svg" alt="github" /></a>
+        
+
+        
+            <a href="https://twitter.com/dommett110" target="_blank" rel="noopener"><img class="icon" src="/img/twitter.svg" alt="twitter" /></a>
+        
+
+        
+
+        
+            <a href="https://www.linkedin.com/in/mdommett/" target="_blank" rel="noopener"><img class="icon" src="/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="mailto:michaeldommett1@gmail.com"><img class="icon" src="/img/email.svg" alt="email" /></a>
+        
+
+        
+            <a href="/index.xml"><img class="icon" src="/img/rss.svg" alt="rss" /></a>
+        
+        
+        </div>
+    </div>
+</section>
+<script src="ASCIIMathML.js"></script>
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML"></script>
+<script>renderMathInElement(document.body);</script>
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/xcode.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Interpolation with Gaussian broadening
+
+</div>
+
+                    <div class="initials"><a href="/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Mon Jan 29 2018 00:00:00 UTC'>Jan 29, 2018</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>3 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>In theoretical photochemistry, we simulate what happens when molecules and materials absorb light. In order to excite electrons in organic materials, a requirement for photovoltaic devices, the light has to be in the ultraviolet range of the electromagnetic spectrum. To characterise molecules, a UV/Vis spectrometer measures how absorption varies with the energy of the incident light. We can simulate this process using calculations, and plot a spectrum, without ever going into the lab.</p>
+
+<p>In this post I will discuss the simplest method to simulate a spectrum, using a hypothetical set of absorption energies for a single molecular conformation. The x-axis will be a set of electronic excitation energies, and the y axis is the associated oscillator strength.  The oscillator strength, simply put, is a measure of the likelihood, or favourability, that at a specific energy of light, the energy will be absorbed by the molecule.</p>
+
+<pre><code class="language-python">energies=[3.1, 3.7, 4.1, 4.5, 5.6]
+osc=[0.4, 0.8, 0.1, 0.7, 0.2]
+</code></pre>
+
+<p>We can plot a line spectrum using:</p>
+
+<pre><code class="language-python">fig,ax=plt.subplots(figsize=(6,4))
+for energy,osc_strength in zip(energies,osc):
+    ax.plot((energy,energy),(0,osc_strength),c=&quot;r&quot;)
+ax.set_xlabel(&quot;Energy (eV)&quot;,fontsize=16)
+ax.xaxis.set_tick_params(labelsize=14,width=1.5)
+ax.yaxis.set_tick_params(labelsize=14,width=1.5)
+for axis in ['top','bottom','left','right']:
+    ax.spines[axis].set_linewidth(1.5)
+ax.set_xlim(2,6)
+ax.set_ylabel(&quot;Osc. Strength&quot;,fontsize=16)
+plt.tight_layout()
+</code></pre>
+
+<p>to produce:</p>
+
+<p><img src="/img/sticks.png" alt="sticks" /></p>
+
+<p>Thats all well and good, but does not represent what really happens in a spectrometer, since there are huge numbers of molecular conformations, which will all have slightly different oscillator strengths. Therefore, we have a <em>distribution</em> about our vertical line. We can crudely approximate this distribution to be gaussian and interpolate between the energies to generate a peaks. To achieve this we need to code up the gaussian distribution. To get our set of y-values,  we run across an array of <em>M</em> energies (our x-values) and use as our reference each of our N excitation energies <em>E</em>, which sit at the centre of the distribution. The scaling factor is the associated oscillator strength <em>f</em>. Our resulting spectrum will thus take the form:</p>
+
+<div>$$g(E)=\sum_{i}^{M}\sum_{j}^{N}f_j\exp\left[-\frac{(E_j-E_i)^2}{\sigma}\right]$$</div>
+
+<p>We can define a function that computes the above equation as:</p>
+
+<pre><code class="language-python">def spectrum(E,osc,sigma,x):
+    gE=[]
+    for Ei in x:
+        tot=0
+        for Ej,os in zip(E,osc):
+            tot+=os*np.exp(-((((Ej-Ei)/sigma)**2)))
+        gE.append(tot)
+    return gE
+</code></pre>
+
+<p>We can call this function using our fictitious energies and oscillator strengths, choosing sigma as 0.4 eV and x to run over 500 points within an 6 eV window:</p>
+
+<pre><code class="language-python">x=np.linspace(0,6, num=500, endpoint=True)
+simga=0.4
+gE=spectrum(energies,osc,sigma,x)
+</code></pre>
+
+<p>We can then plot x against gE to have a nice broadened spectrum:</p>
+
+<pre><code class="language-python">fig,ax=plt.subplots(figsize=(6,4))
+ax.plot(x,gE,&quot;--k&quot;)
+for energy,osc_strength in zip(energies,osc):
+    ax.plot((energy,energy),(0,osc_strength),c=&quot;r&quot;)
+ax.set_xlabel(&quot;Energy (eV)&quot;,fontsize=16)
+ax.xaxis.set_tick_params(labelsize=14,width=1.5)
+ax.yaxis.set_tick_params(labelsize=14,width=1.5)
+for axis in ['top','bottom','left','right']:
+    ax.spines[axis].set_linewidth(1.5)
+ax.set_xlim(2,6)
+ax.set_ylabel(&quot;Osc. Strength&quot;,fontsize=16)
+plt.tight_layout()
+</code></pre>
+
+<p><img src="/img/spectrum_04.png" alt="spectrum" /></p>
+
+<p>We can even play around with our line widths by changing the standard deviation:</p>
+
+<p><img src="/img/spectrum_all.png" alt="Spectrum" align="center" width="full"></p>
+
+<p>On my <a href="https://github.com/mdommett/compchem-scripts/blob/master/g09_spectrum.py">github</a>, I have a python program that does all of this automatically, and even converts the y-axis to a more chemically relevant unit (L/mol/cm). It takes as input Gaussian 09 TD-DFT output files, parses it for the energies and oscillator strenghts, and will automatically render an absorption spectrum. It can do this for multiple input files at the same time so that you can overlay spectra -  feel free to use it in your work!</p>
+
+<p>md</p>
+
+                <br>
+		<p><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+</body>
+</html>
+
