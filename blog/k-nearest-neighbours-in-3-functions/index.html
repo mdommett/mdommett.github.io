@@ -275,11 +275,8 @@ for x in range(X_test.shape[0]):
 
 <pre><code class="language-python">def accuracy(actual, prediction):
     incorrect=(np.array(prediction)-np.array(actual))**2
-    total=0
-    for i in incorrect:
-        if i!=0:
-            total+=1
-    return ((len(actual)-total)/len(actual))*100
+    total=len(np.nonzero(incorrect)[0])
+    return ((len(actual)-total)/len(actual))*100  
 
 print(accuracy(predictions))
 &gt;&gt;&gt;96.6667
