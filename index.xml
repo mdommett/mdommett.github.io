@@ -17,7 +17,7 @@
       <pubDate>Sun, 11 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/blog/k-nearest-neighbours-in-3-functions/</guid>
-      <description>K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class for a data point based on the class of the K (an intenger) closest data points. As an example, lets take a one dimensional problem. Say we have a group of people at a party, and we know their heights and gender. Someone new is arriving, and we only know their height. Granted, this is an odd party.</description>
+      <description>K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class for a data point based on the class of the K (an intenger) closest data points. As an example, let&amp;rsquo;s take a one dimensional problem. Say we have a group of people at a party, and we know their heights and gender. Someone new is arriving, and we only know their height (&amp;hellip;ok, this is an odd party).</description>
     </item>
     
     <item>

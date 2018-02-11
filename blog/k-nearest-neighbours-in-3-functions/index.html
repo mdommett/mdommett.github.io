@@ -9,10 +9,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Michael Dommett">
-<meta name="description" content="K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class for a data point based on the class of the K (an intenger) closest data points. As an example, lets take a one dimensional problem. Say we have a group of people at a party, and we know their heights and gender. Someone new is arriving, and we only know their height. Granted, this is an odd party.">
+<meta name="description" content="K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class for a data point based on the class of the K (an intenger) closest data points. As an example, let&rsquo;s take a one dimensional problem. Say we have a group of people at a party, and we know their heights and gender. Someone new is arriving, and we only know their height (&hellip;ok, this is an odd party).">
 
 <meta property="og:title" content="K-nearest neighbours in 3 functions" />
-<meta property="og:description" content="K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class for a data point based on the class of the K (an intenger) closest data points. As an example, lets take a one dimensional problem. Say we have a group of people at a party, and we know their heights and gender. Someone new is arriving, and we only know their height. Granted, this is an odd party." />
+<meta property="og:description" content="K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class for a data point based on the class of the K (an intenger) closest data points. As an example, let&rsquo;s take a one dimensional problem. Say we have a group of people at a party, and we know their heights and gender. Someone new is arriving, and we only know their height (&hellip;ok, this is an odd party)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/blog/k-nearest-neighbours-in-3-functions/" />
 
@@ -186,9 +186,9 @@
             <div class="markdown">
                 
 
-<p>K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class for a data point based on the class of the  <em>K</em> (an intenger) closest data points. As an example, lets take a one dimensional problem. Say we have a group of people at a party, and we know their heights and gender. Someone new is arriving, and we only know their height. Granted, this is an odd party. We can assign, or classify, the person as male or female based on the <em>K</em> (say, three) most similar heights from the rest of the guests.</p>
+<p>K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class for a data point based on the class of the  <em>K</em> (an intenger) closest data points. As an example, let&rsquo;s take a one dimensional problem. Say we have a group of people at a party, and we know their heights and gender. Someone new is arriving, and we only know their height (&hellip;ok, this is an odd party). We can assign, or classify, the person as male or female based on the <em>K</em> (say, three) most similar heights from the rest of the guests.</p>
 
-<p>K-nearest neighbours is what is called a <em>lazy</em> algorithm, since the classification is done on the fly for each case, using the whole data set. Thus for every new person at the party, we have to calculate all of the height proximities again. This can make the algorithm quite expensive for large multidemensional datasets. Anyway, lets look at implementing KNN in python. We will need  three functions:</p>
+<p>K-nearest neighbours is what is called a <em>lazy</em> algorithm, since the classification is done on the fly for each case, using the whole data set. Thus for every new person arriving at the party, we have to calculate all of the height proximities again. This can make the algorithm quite expensive for large, multidemensional datasets. Anyway, lets look at implementing KNN in python. We will need  three functions:</p>
 
 <ol>
 <li>Measure the distances between the instance to be classified and all other data points</li>
@@ -200,7 +200,7 @@
 
 <h3 id="1-calculate-the-distance">1. Calculate the distance</h3>
 
-<p>We need to compute the simalirity between two points. As a measure of similarity, we will be using a the Euclidean distance. With our height and gender example, we were working in 1D vector space. In the Iris set, we are working in 4-dimensional space (sepal width, sepal length, petal length, petal width). To calculate the distance between to datapoints, we can use this general function:</p>
+<p>We need to compute the simalirity between two points. As a measure of similarity, we will be using a the Euclidean distance. With our height and gender example, we were working in 1D vector space. In the Iris set, we are working in 4-dimensional space (sepal width, sepal length, petal length, petal width). To calculate the distance between two datapoints, we can use this general function:</p>
 
 <pre><code class="language-python">def euclidean_distance(point1,point2):
     dist2=[(b - a)**2 for (a, b) in zip(point1,point2)]
@@ -212,7 +212,7 @@
 
 <h3 id="2-find-the-nearest-neighbours">2. Find the nearest neighbours</h3>
 
-<p>Once we have our distances, we choose the K smallest values to use as our classifiers. These are our neighbours. We use our <code>euclidean_distance</code> function within our neighbours function. We calculate our distances between all points in the dataset and our point to classify. As a note, our points are 5-dimensional, where the 5th is the class, so we remove this from our distance calculation</p>
+<p>Once we have our distances, we choose the K smallest values to use as our classifiers. These are the neighbours. We use our <code>euclidean_distance</code> function within our neighbours function, calculating the distances between all points in the dataset and the point to classify. As a note, our points are 5-dimensional (sepal width, sepal length, petal length, petal width,class), where the 5th is the class, so we remove this 5th dimension from our distance calculation:</p>
 
 <pre><code class="language-python">import operator
 def get_neighbours(dataset,point,k):
@@ -245,7 +245,7 @@ def get_neighbours(dataset,point,k):
     return sortedVotes[0][0] 
 </code></pre>
 
-<p>By passing our neighbours to the <code>get_response</code>, the class will be returned to us. Lets put all this together now.</p>
+<p>By passing our neighbours to the <code>get_response</code>, the class will be returned to us. Let&rsquo;s put all this together now.</p>
 
 <h3 id="main-algorithm">Main algorithm</h3>
 
@@ -271,7 +271,7 @@ for x in range(X_test.shape[0]):
     predictions.append(result)
 </code></pre>
 
-<p>And thats it! We have our set of predictions. We can test the accuracy of these based on a fourth function (sorry, I lied when I said 3 functions..!):</p>
+<p>And that&rsquo;s it! We have our set of predictions. We can test the accuracy of these based on a fourth function (sorry, I lied when I said 3 functions):</p>
 
 <pre><code class="language-python">def accuracy(actual, prediction):
     incorrect=(np.array(prediction)-np.array(actual))**2
@@ -286,6 +286,8 @@ print(accuracy(predictions))
 </code></pre>
 
 <p>There we go, the 3-Nearest neighbours is able to predict at 97% accuracy. Not bad considering how simple this algorithm is. Thanks for reading!</p>
+
+<p>md</p>
 
                 <br>
 		<p><a href="/blog/">Back to posts</a></p>
