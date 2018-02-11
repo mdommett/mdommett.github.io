@@ -9,10 +9,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Michael Dommett">
-<meta name="description" content="K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class based on the K (an intenger) closest data points. For the simplest example, lets take a one dimensional problem. Say we have a group of people, and the only info we have is their height and gender. Our X-variable is height, and we have to classify as male or female. We then add a new person to the group, with only their height as information, and want to classify their gender.">
+<meta name="description" content="K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class for a data point based on the class of the K (an intenger) closest data points. As an example, lets take a one dimensional problem. Say we have a group of people at a party, and we know their heights and gender. Someone new is arriving, and we only know their height. Granted, this is an odd party.">
 
 <meta property="og:title" content="K-nearest neighbours in 3 functions" />
-<meta property="og:description" content="K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class based on the K (an intenger) closest data points. For the simplest example, lets take a one dimensional problem. Say we have a group of people, and the only info we have is their height and gender. Our X-variable is height, and we have to classify as male or female. We then add a new person to the group, with only their height as information, and want to classify their gender." />
+<meta property="og:description" content="K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class for a data point based on the class of the K (an intenger) closest data points. As an example, lets take a one dimensional problem. Say we have a group of people at a party, and we know their heights and gender. Someone new is arriving, and we only know their height. Granted, this is an odd party." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/blog/k-nearest-neighbours-in-3-functions/" />
 
@@ -186,9 +186,9 @@
             <div class="markdown">
                 
 
-<p>K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class based on the <em>K</em> (an intenger) closest data points. For the simplest example, lets take a one dimensional problem. Say we have a group of people, and the only info we have is their height and gender. Our X-variable is height, and we have to classify as male or female. We then add a new person to the group, with only their height as information, and want to classify their gender. We take the <em>K</em> (say, three) most similar heights and assign the person&rsquo;s gender based on which of male or female is most common. Simple!</p>
+<p>K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class for a data point based on the class of the  <em>K</em> (an intenger) closest data points. As an example, lets take a one dimensional problem. Say we have a group of people at a party, and we know their heights and gender. Someone new is arriving, and we only know their height. Granted, this is an odd party. We can assign, or classify, the person as male or female based on the <em>K</em> (say, three) most similar heights from the rest of the guests.</p>
 
-<p>K-nearest neighbours is what is called a <em>lazy</em> algorithm, since the classification is done on the fly for each case, using the whole data set. So, lets look at implementing KNN in python. We will need  three functions:</p>
+<p>K-nearest neighbours is what is called a <em>lazy</em> algorithm, since the classification is done on the fly for each case, using the whole data set. Thus for every new person at the party, we have to calculate all of the height proximities again. This can make the algorithm quite expensive for large multidemensional datasets. Anyway, lets look at implementing KNN in python. We will need  three functions:</p>
 
 <ol>
 <li>Measure the distances between the instance to be classified and all other data points</li>
@@ -218,12 +218,12 @@
 def get_neighbours(dataset,point,k):
     distances = []
     for i in range(len(dataset)):
-        dist=euclidean_distance(point,dataset[i][:-1]) # Remove the class from the distance calc.
-        distances.append((dataset[i], dist)) # Tupple of the data point and the corresponding distance
-    distances.sort(key=operator.itemgetter(1)) # Sort the distances from smallest to largest
+        dist=euclidean_distance(point,dataset[i][:-1]) 
+        distances.append((dataset[i], dist)) 
+    distances.sort(key=operator.itemgetter(1)) 
     neighbours = []
     for x in range(k):
-        neighbours.append(distances[x][0]) # get the vector of the K nearest neighbours
+        neighbours.append(distances[x][0]) 
     return neighbours
 </code></pre>
 
@@ -234,16 +234,15 @@ def get_neighbours(dataset,point,k):
 <p>We need to take our nieghbours and have them vote on which class we assign to our data point. We do this simply by finding the majority:</p>
 
 <pre><code class="language-python">def get_response(neighbours):
-    classVotes = {} # initiate a dictionary
-    # For each of the classes, keep a running total with the number of times that class occurs
+    classVotes = {} 
     for x in range(len(neighbours)):
-        response = neighbours[x][-1] # The class of the neighbours is the last value of the vector
+        response = neighbours[x][-1] 
         if response in classVotes: 
-            classVotes[response] += 1 # add 1 to the running total for that class
+            classVotes[response] += 1 
         else:
-            classVotes[response] = 1 # create a new dictionary value for a new class that hasn't appeared
-    sortedVotes = sorted(classVotes.items(), key=operator.itemgetter(1), reverse=True) # sort based on highest number of votes
-    return sortedVotes[0][0] # return the class with the most votes
+            classVotes[response] = 1 
+    sortedVotes = sorted(classVotes.items(), key=operator.itemgetter(1), reverse=True)
+    return sortedVotes[0][0] 
 </code></pre>
 
 <p>By passing our neighbours to the <code>get_response</code>, the class will be returned to us. Lets put all this together now.</p>
@@ -287,8 +286,6 @@ print(accuracy(predictions))
 </code></pre>
 
 <p>There we go, the 3-Nearest neighbours is able to predict at 97% accuracy. Not bad considering how simple this algorithm is. Thanks for reading!</p>
-
-<p>md</p>
 
                 <br>
 		<p><a href="/blog/">Back to posts</a></p>
