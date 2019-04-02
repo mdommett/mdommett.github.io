@@ -6,10 +6,19 @@
     <description>Recent content on michael dommett</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 11 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Faculty data science fellowship</title>
+      <link>/blog/faculty-fellowship/</link>
+      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/faculty-fellowship/</guid>
+      <description>I haven&amp;rsquo;t posted in a long time, I&amp;rsquo;ve been rather busy. Towards the end of summer 2018, I started writing my PhD thesis, which was submitted in January. During the writing process I was considering what would come next. Since the first year of my PhD, I knew that I wanted to get into data science in some way, and had my eye on a number of training programs and fellowships.</description>
+    </item>
     
     <item>
       <title>K-nearest neighbours in 3 functions</title>
