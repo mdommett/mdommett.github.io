@@ -2,67 +2,67 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on michael dommett</title>
-    <link>/blog/</link>
+    <link>https://mdommett.github.io/blog/</link>
     <description>Recent content in Blogs on michael dommett</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 02 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mdommett.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Faculty data science fellowship</title>
-      <link>/blog/faculty-fellowship/</link>
+      <link>https://mdommett.github.io/blog/faculty-fellowship/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/faculty-fellowship/</guid>
+      <guid>https://mdommett.github.io/blog/faculty-fellowship/</guid>
       <description>I haven&amp;rsquo;t posted in a long time, I&amp;rsquo;ve been rather busy. Towards the end of summer 2018, I started writing my PhD thesis, which was submitted in January. During the writing process I was considering what would come next. Since the first year of my PhD, I knew that I wanted to get into data science in some way, and had my eye on a number of training programs and fellowships.</description>
     </item>
     
     <item>
       <title>K-nearest neighbours in 3 functions</title>
-      <link>/blog/k-nearest-neighbours-in-3-functions/</link>
+      <link>https://mdommett.github.io/blog/k-nearest-neighbours-in-3-functions/</link>
       <pubDate>Sun, 11 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/k-nearest-neighbours-in-3-functions/</guid>
+      <guid>https://mdommett.github.io/blog/k-nearest-neighbours-in-3-functions/</guid>
       <description>K-nearest neighbours is a nice little algorithm for classification problems. It assigns a class for a data point based on the class of the K (an intenger) closest data points. As an example, let&amp;rsquo;s take a one dimensional problem. Say we have a group of people at a party, and we know their heights and gender. Someone new is arriving, and we only know their height (&amp;hellip;ok, this is an odd party).</description>
     </item>
     
     <item>
       <title>Interpolation with Gaussian broadening</title>
-      <link>/blog/interpolation-with-gaussian-broadening/</link>
+      <link>https://mdommett.github.io/blog/interpolation-with-gaussian-broadening/</link>
       <pubDate>Mon, 29 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/interpolation-with-gaussian-broadening/</guid>
+      <guid>https://mdommett.github.io/blog/interpolation-with-gaussian-broadening/</guid>
       <description>In theoretical photochemistry, we simulate what happens when molecules and materials absorb light. In order to excite electrons in organic materials, a requirement for photovoltaic devices, the light has to be in the ultraviolet range of the electromagnetic spectrum. To characterise molecules, a UV/Vis spectrometer measures how absorption varies with the energy of the incident light. We can simulate this process using calculations, and plot a spectrum, without ever going into the lab.</description>
     </item>
     
     <item>
       <title>Titanic: machine learning from disaster</title>
-      <link>/blog/titanic-machine-learning-from-disaster/</link>
+      <link>https://mdommett.github.io/blog/titanic-machine-learning-from-disaster/</link>
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/titanic-machine-learning-from-disaster/</guid>
+      <guid>https://mdommett.github.io/blog/titanic-machine-learning-from-disaster/</guid>
       <description>A happy new year to one and all. Over the Christmas holidays I had crack at my first Kaggle competition. Kaggle host competitions based around machine learning. The premise: they provide a data set, you must build a model and predict an outcome.
 The competition I took part in, whilst filled to the brim with turkey, mince pies, and costco millionaire shortbread traybake which is honestly the nicest thing in the world and worth a costco membership alone, uses data from the sinking of the Titanic.</description>
     </item>
     
     <item>
       <title>Getting to grips with MySQL</title>
-      <link>/blog/getting-to-grips-with-mysql/</link>
+      <link>https://mdommett.github.io/blog/getting-to-grips-with-mysql/</link>
       <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/getting-to-grips-with-mysql/</guid>
+      <guid>https://mdommett.github.io/blog/getting-to-grips-with-mysql/</guid>
       <description>Over the last few months I have been using MySQL to locally archive, store, and access data for a few of my projects. Previously, I was using Excel for this purpose, but I have come to find it less than ideal, mainly due to its clunkiness and the fact that I got into bad habits (no vesion control, poor formatting, rudimentary analyses). As such, I decided to switch to a combination of MySQL and python with pandas.</description>
     </item>
     
     <item>
       <title>I got  published</title>
-      <link>/blog/i-got-published/</link>
+      <link>https://mdommett.github.io/blog/i-got-published/</link>
       <pubDate>Wed, 06 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/i-got-published/</guid>
+      <guid>https://mdommett.github.io/blog/i-got-published/</guid>
       <description>At the end of 2016, Rachel Crespo-Otero and I received news that our submitted manuscript was to be published in the journal Physical Chemistry Chemical Physics. It was a great piece of news to receive before the Christmas holidays and was met with both joy and relief. It was the culmination of 12 months of work - the manuscript had taken many guises before we were happy enough to submit. This was my first scientific publication and in this post I want to give some background into the project, how we approached the problem, and the process of publishing in a peer-reviewed academic journal.</description>
     </item>
     
